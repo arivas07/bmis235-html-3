@@ -63,3 +63,8 @@ nav img {
 nav img:hover {
   transform: translateY(-3px);
 }
+h1 {
+  color: #8B261D;
+  border-bottom: 2px solid #8B261D;
+  padding-bottom: 8px;
+}
