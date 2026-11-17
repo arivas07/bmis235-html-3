@@ -60,3 +60,6 @@ footer {
 nav img {
   border-radius: 8px;
 }
+nav img:hover {
+  transform: translateY(-3px);
+}
