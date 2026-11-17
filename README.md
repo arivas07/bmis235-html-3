@@ -1,9 +1,9 @@
 # BMIS 235 · HTML-3 · Links + CSS: Your Own Site
 
-**Name:** YOUR NAME
-**GU username:** YOUR-GU-USERNAME
+**Name:** Arnie Rivas
+**GU username:** arivas-oregelflore
 
-My live page: https://YOUR-GITHUB-USERNAME.github.io/bmis235-html-3/
+My live page: [https://YOUR-GITHUB-USERNAME.github.io/bmis235-html-3/](https://arivas07.github.io/bmis235-html-3/index.html)
 
 Instructions: https://gu-27.github.io/html-module/html-3.html
 
