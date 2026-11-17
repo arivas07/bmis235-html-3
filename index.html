@@ -1,45 +1,124 @@
 <!DOCTYPE html>
 <!--
-  Author: YOUR NAME
-  GU username: YOUR-GU-USERNAME
+  Author: Arnie Rivas
+  GU username: arivas-oreglflore
   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="author" content="YOUR NAME">
-<title>Home</title>
-
-<!-- this one line connects the page to the stylesheet -->
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="author" content="YOUR NAME">
+  <title>Florence Day Trips</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ===== MENU ============================================================
-     The menu is four links. Each link wraps an image instead of words.
-     Build it once on this page, check that every link works,
-     then copy the whole <nav> block and paste it over the menu on the
-     other three pages, so every page has the exact same menu.
-     ===================================================================== -->
-<nav>
+  <nav>
     <a href="index.html"><img src="img/home.png" alt="Home"></a>
-    <a href="page1.html"><img src="img/page1.png" alt="Page 1"></a>
-    <a href="page2.html"><img src="img/page2.png" alt="Page 2"></a>
-    <a href="page3.html"><img src="img/page3.png" alt="Page 3"></a>
-</nav>
+    <a href="pisa.html"><img src="img/pisa.png" alt="Pisa"></a>
+    <a href="siena.html"><img src="img/siena.png" alt="Siena"></a>
+    <a href="cinqueterre.html"><img src="img/cinqueterre.png" alt="Cinque Terre"></a>
+  </nav>
 
-<h1>Home</h1>
-<p>This is the home page. It introduces your idea and points to the other three pages.</p>
-<p>Write about your idea here.</p>
+  <h1>Three Day Trips from Florence</h1>
+  <p>Florence is the ultimate home base in central Italy. With regional trains leaving Santa Maria Novella station every hour, you can easily reach coastal cliffs, medieval hill towns, and world-famous landmarks in under two hours.</p>
+  <p>Check out the official <a href="https://www.trenitalia.com/en.html">Trenitalia train schedule</a> to plan your routes, or <a href="mailto:arivas07@zagmail.gonzaga.edu">email me</a> if you want to tag along!</p>
 
-<!-- ===== SHOWCASE ======================================================
-     This box is empty on purpose. In Part 7 you paste an interactive
-     graphic BETWEEN the opening <div> and the closing </div> below.
-     ===================================================================== -->
-<div class="showcase"></div>
+  <div class="showcase">
+    <!-- CSS: Styles scoped strictly to .showcase -->
+    <style>
+      .showcase {
+        font-family: Georgia, serif;
+        background-color: #FAF5EB;
+        border: 2px solid #8B261D;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        max-height: 450px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .showcase-title {
+        color: #8B261D;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .showcase-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+      .showcase-btn {
+        background-color: #8B261D;
+        color: #FAF5EB;
+        border: none;
+        padding: 10px 16px;
+        font-family: Georgia, serif;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .showcase-btn:hover {
+        opacity: 0.85;
+      }
+      .showcase-card {
+        background-color: #FFFFFF;
+        border-left: 5px solid #8B261D;
+        padding: 15px;
+        border-radius: 6px;
+        color: #2C221E;
+        min-height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .showcase-stat {
+        font-weight: bold;
+        color: #8B261D;
+        margin-bottom: 6px;
+      }
+    </style>
 
-<!-- Footer: fill in your name -->
-<footer>Built by YOUR NAME &middot; BMIS 235</footer>
+    <!-- HTML: Interactive Trip Explorer -->
+    <div class="showcase-title">Click a Destination for Train Time & Must-Do Tip</div>
+    <div class="showcase-buttons">
+      <button class="showcase-btn" onclick="showTrip('pisa')">Pisa</button>
+      <button class="showcase-btn" onclick="showTrip('siena')">Siena</button>
+      <button class="showcase-btn" onclick="showTrip('cinque')">Cinque Terre</button>
+    </div>
+    <div class="showcase-card" id="trip-display">
+      <div class="showcase-stat">Select a destination above!</div>
+      <div>Compare travel times from Florence SMN station and see the top highlight for each trip.</div>
+    </div>
 
+    <!-- JS: Updates the card when a button is clicked -->
+    <script>
+      function showTrip(place) {
+        const display = document.getElementById('trip-display');
+        const trips = {
+          pisa: {
+            stat: "Train Time: ~1 Hour (Direct) | Ticket: ~€9",
+            tip: "Walk 20 minutes from Pisa Centrale to the Piazza dei Miracoli to climb the Leaning Tower and visit the Baptistery."
+          },
+          siena: {
+            stat: "Train Time: ~1 Hour 30 Mins | Ticket: ~€10",
+            tip: "Grab a panini and sit right on the brick slopes of the shell-shaped Piazza del Campo, then climb the Torre del Mangia."
+          },
+          cinque: {
+            stat: "Train Time: ~2 Hours 15 Mins | Ticket: ~€18",
+            tip: "Buy the Cinque Terre Express train pass to hop between all five colorful cliffside villages and hike the coastal trail."
+          }
+        };
+        display.innerHTML = `<div class="showcase-stat">${trips[place].stat}</div><div>${trips[place].tip}</div>`;
+      }
+    </script>
+  </div>
+
+  <footer>Built by YOUR NAME &middot; BMIS 235</footer>
 </body>
 </html>
